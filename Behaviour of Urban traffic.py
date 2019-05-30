@@ -1,3 +1,4 @@
+#Data preprocessing 
 from pandas import *
 from numpy import *
 inp=read_csv('E:\ML\ML CLASSROOM\ML-ASSIGNMENT\Behavior of the urban traffic of the city of Sao Paulo in Brazil\Behavior of the urban traffic of the city of Sao Paulo in Brazil.csv')
@@ -18,6 +19,7 @@ beta=zeros(len(inp.columns))
 print(beta.shape)
 h=dot(X_train,beta)
 print(h.shape)
+##### Gradient Descent algorithm
 alpha=0.00001
 lambd=0.001
 iterate=1000
@@ -31,7 +33,7 @@ print(Y_est.shape)
 error1=.5*(sum((Y_est)-(Y_test))**2)/(27*27)
 print(error1)
 
-
+##### Closed from algorithm
 w1=(dot(X_train.T,X_train)+lambd*(eye(18)))
 w2=dot(linalg.inv(w1),X_train.T)
 w=dot(w2,Y_train)
@@ -40,6 +42,7 @@ Y1_est=dot(X_test,w)
 error2=.5*(sum((Y1_est)-(Y_test))**2)/(27*27)
 print(error2) 
 
+#### MLE algorithm 
 from math import *
 sigma=.1
 
